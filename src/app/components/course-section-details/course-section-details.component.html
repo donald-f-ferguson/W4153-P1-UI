@@ -1,0 +1,166 @@
+<div *ngIf="viewMode">
+  <div *ngIf="currentCourseSection.course_id">
+    <h4>Course Section</h4>
+    <div>
+      <label><strong>Course ID:</strong></label> {{ currentCourseSection.course_id }}
+    </div>
+    <div>
+      <label><strong>Course Name:</strong></label> {{ currentCourseSection.course_name }}
+    </div>
+    <div>
+      <label><strong>UUID:</strong></label> {{ currentCourseSection.uuid }}
+    </div>
+    <div>
+      <label><strong>Created At:</strong></label> {{ currentCourseSection.created_at }}
+    </div>
+    <div>
+      <label><strong>Course Code:</strong></label> {{ currentCourseSection.course_code }}
+    </div>
+    <div>
+      <label><strong>SIS Course ID:</strong></label> {{ currentCourseSection.sis_course_id }}
+    </div>
+    <div>
+      <label><strong>Course Number:</strong></label> {{ currentCourseSection.course_no }}
+    </div>
+    <div>
+      <label><strong>Section:</strong></label> {{ currentCourseSection.section }}
+    </div>
+    <div>
+      <label><strong>Course Year:</strong></label> {{ currentCourseSection.course_year }}
+    </div>
+    <div>
+      <label><strong>Semester:</strong></label> {{ currentCourseSection.semester }}
+    </div>
+    <a class="badge badge-warning" [routerLink]="'/course-sections/' + currentCourseSection.course_id">
+      Edit
+    </a>
+  </div>
+  <div *ngIf="!currentCourseSection.course_id">
+    <p>Please click on a Course Section...</p>
+  </div>
+</div>
+<div *ngIf="!viewMode">
+  <div *ngIf="currentCourseSection.course_id">
+    <div class="edit-form">
+      <h4>Course Section</h4>
+      <form>
+        <div class="form-group">
+          <label for="course_id">Course ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="course_id"
+            [(ngModel)]="currentCourseSection.course_id"
+            name="course_id"
+          />
+        </div>
+        <div class="form-group">
+          <label for="course_name">Course Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="course_name"
+            [(ngModel)]="currentCourseSection.course_name"
+            name="course_name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="uuid">UUID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="uuid"
+            [(ngModel)]="currentCourseSection.uuid"
+            name="uuid"
+          />
+        </div>
+        <div class="form-group">
+          <label for="created_at">Created At</label>
+          <input
+            type="datetime-local"
+            class="form-control"
+            id="created_at"
+            [(ngModel)]="currentCourseSection.created_at"
+            name="created_at"
+          />
+        </div>
+        <div class="form-group">
+          <label for="course_code">Course Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="course_code"
+            [(ngModel)]="currentCourseSection.course_code"
+            name="course_code"
+          />
+        </div>
+        <div class="form-group">
+          <label for="sis_course_id">SIS Course ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sis_course_id"
+            [(ngModel)]="currentCourseSection.sis_course_id"
+            name="sis_course_id"
+          />
+        </div>
+        <div class="form-group">
+          <label for="course_no">Course Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="course_no"
+            [(ngModel)]="currentCourseSection.course_no"
+            name="course_no"
+          />
+        </div>
+        <div class="form-group">
+          <label for="section">Section</label>
+          <input
+            type="text"
+            class="form-control"
+            id="section"
+            [(ngModel)]="currentCourseSection.section"
+            name="section"
+          />
+        </div>
+        <div class="form-group">
+          <label for="course_year">Course Year</label>
+          <input
+            type="text"
+            class="form-control"
+            id="course_year"
+            [(ngModel)]="currentCourseSection.course_year"
+            name="course_year"
+          />
+        </div>
+        <div class="form-group">
+          <label for="semester">Semester</label>
+          <input
+            type="text"
+            class="form-control"
+            id="semester"
+            [(ngModel)]="currentCourseSection.semester"
+            name="semester"
+          />
+        </div>
+      </form>
+
+      <button class="badge badge-danger mr-2" (click)="deleteCourseSection()">
+        Delete
+      </button>
+
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateCourseSection()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  </div>
+  <div *ngIf="!currentCourseSection.course_id">
+    <p>Cannot access this Course Section...</p>
+  </div>
+</div>

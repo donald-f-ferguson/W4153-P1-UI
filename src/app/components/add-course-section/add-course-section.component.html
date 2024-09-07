@@ -1,0 +1,131 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="course_id">Course ID</label>
+        <input
+          type="number"
+          class="form-control"
+          id="course_id"
+          required
+          [(ngModel)]="courseSection.course_id"
+          name="course_id"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="course_name">Course Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="course_name"
+          required
+          [(ngModel)]="courseSection.course_name"
+          name="course_name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="uuid">UUID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="uuid"
+          required
+          [(ngModel)]="courseSection.uuid"
+          name="uuid"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="created_at">Created At</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          id="created_at"
+          required
+          [(ngModel)]="courseSection.created_at"
+          name="created_at"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="course_code">Course Code</label>
+        <input
+          type="text"
+          class="form-control"
+          id="course_code"
+          required
+          [(ngModel)]="courseSection.course_code"
+          name="course_code"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="sis_course_id">SIS Course ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="sis_course_id"
+          required
+          [(ngModel)]="courseSection.sis_course_id"
+          name="sis_course_id"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="course_no">Course Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="course_no"
+          required
+          [(ngModel)]="courseSection.course_no"
+          name="course_no"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="section">Section</label>
+        <input
+          type="text"
+          class="form-control"
+          id="section"
+          required
+          [(ngModel)]="courseSection.section"
+          name="section"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="course_year">Course Year</label>
+        <input
+          type="text"
+          class="form-control"
+          id="course_year"
+          required
+          [(ngModel)]="courseSection.course_year"
+          name="course_year"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <input
+          type="text"
+          class="form-control"
+          id="semester"
+          required
+          [(ngModel)]="courseSection.semester"
+          name="semester"
+        />
+      </div>
+
+      <button (click)="saveCourseSection()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Course Section was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newCourseSection()">Add</button>
+    </div>
+  </div>
+</div>
